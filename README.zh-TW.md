@@ -31,6 +31,29 @@
 **diff 驅動稽核**：只有相關檔案真的變動過的章節才重讀重寫，其餘章節由 git diff 本身
 證明仍然正確。
 
+## 怎麼開手冊
+
+檢視器是在執行時用 `fetch()` 載入 `data/*.md`，而瀏覽器會擋掉 `file://` 頁面的
+fetch——所以手冊必須透過 HTTP 開啟。以下任一種方式都可以：
+
+- **雙擊** `docs-site/open-handbook.bat`（Windows）或執行
+  `docs-site/open-handbook.sh`（macOS/Linux）——自動啟動內建 server 並打開瀏覽器，
+  除了 Node 不需要任何工具。
+- **Live Server** —— 在 VS Code / Cursor 對 `docs-site/index.html` 按右鍵 →
+  *Open with Live Server*。加分：`data/*.md` 一存檔頁面就自動重新整理。
+- **任何靜態 server** —— 例如 `node docs-site/serve.cjs 8787`，再開
+  `http://localhost:8787`。
+
+### docs-site/ 裡面是什麼
+
+| 檔案 | 為什麼存在 |
+|---|---|
+| `data/` | 手冊內容（md/json）——AI 唯一會修改的地方 |
+| `index.html` + `assets/viewer.*` | 檢視器：側邊欄、Mermaid 渲染、健康儀表板 |
+| `assets/vendor/` | marked + mermaid 直接內建（約 2.6 MB），手冊完全離線可用——不靠 CDN、不用 npm install |
+| `serve.cjs` | 零依賴靜態 server——因為瀏覽器擋 `file://` 的 fetch |
+| `open-handbook.bat` / `.sh` | Windows / macOS / Linux 的雙擊啟動器——給沒有開發環境的讀者 |
+
 ## 安裝
 
 ```

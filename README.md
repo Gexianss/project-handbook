@@ -34,6 +34,30 @@ re-running on an updated project does a **diff-driven audit**: only sections who
 related files actually changed get re-read and rewritten; the rest are proven current
 by the git diff itself.
 
+## Viewing the handbook
+
+The viewer loads `data/*.md` with `fetch()` at runtime, and browsers block fetch on
+`file://` pages — so the handbook must be opened over HTTP. Any of these works:
+
+- **Double-click** `docs-site/open-handbook.bat` (Windows) or run
+  `docs-site/open-handbook.sh` (macOS/Linux) — starts the bundled server and opens
+  your browser. Needs nothing but Node.
+- **Live Server** — in VS Code / Cursor, right-click `docs-site/index.html` →
+  *Open with Live Server*. Bonus: the page auto-reloads whenever a `data/*.md` file
+  is saved.
+- **Any static server** — e.g. `node docs-site/serve.cjs 8787`, then open
+  `http://localhost:8787`.
+
+### What's inside docs-site/
+
+| File | Why it exists |
+|---|---|
+| `data/` | The handbook content (md/json) — the only thing AI ever edits |
+| `index.html` + `assets/viewer.*` | The viewer: sidebar, Mermaid rendering, health dashboard |
+| `assets/vendor/` | marked + mermaid bundled locally (~2.6 MB) so the handbook works fully offline — no CDN, no npm install |
+| `serve.cjs` | Zero-dependency static server, because browsers block fetch on `file://` |
+| `open-handbook.bat` / `.sh` | Double-click launchers for Windows / macOS / Linux — for readers without a dev setup |
+
 ## Install
 
 ```
