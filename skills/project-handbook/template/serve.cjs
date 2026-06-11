@@ -26,11 +26,18 @@ const types = {
 
 http
   .createServer((req, res) => {
-    const urlPath = decodeURIComponent(req.url.split("?")[0]);
+    let urlPath;
+    try {
+      urlPath = decodeURIComponent(req.url.split("?")[0]);
+    } catch {
+      res.writeHead(400, { "Content-Type": "text/plain" });
+      res.end("400 Bad Request");
+      return;
+    }
     const filePath = path.normalize(
       path.join(root, urlPath === "/" ? "index.html" : urlPath)
     );
-    if (filePath !== path.join(root, "index.html") && !filePath.startsWith(rootPrefix)) {
+    if (!filePath.startsWith(rootPrefix)) {
       res.writeHead(403, { "Content-Type": "text/plain" });
       res.end("403 Forbidden");
       return;

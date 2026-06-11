@@ -43,7 +43,7 @@ test("blocks path traversal outside template root", async () => {
   const child = await startServer(8897);
   try {
     const res = await fetch("http://localhost:8897/..%2f..%2f..%2f..%2fREADME.md");
-    assert.ok(res.status === 403 || res.status === 404, `got ${res.status}`);
+    assert.equal(res.status, 403);
   } finally {
     child.kill();
   }
