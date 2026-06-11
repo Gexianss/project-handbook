@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "generatedAt": "2026-06-11",
+    "commit": "a1b2c3d",
+    "branch": "main",
+    "toolsUsed": ["npm outdated", "npm audit", "npx knip", "git log", "vitest"]
+  },
+  "facets": [
+    {
+      "id": "code-health",
+      "title": "Code Health",
+      "status": "warn",
+      "summary": "2 oversized files and 7 unused exports found.",
+      "metrics": [
+        { "label": "Source files", "value": 84 },
+        { "label": "Files > 400 lines", "value": 2 },
+        { "label": "Unused exports", "value": 7 }
+      ],
+      "items": [
+        { "label": "src/pages/Board/Board.tsx", "detail": "612 lines — consider splitting drag-drop logic", "severity": "warn" },
+        { "label": "src/store/tasks.ts", "detail": "488 lines", "severity": "warn" },
+        { "label": "src/utils/date.ts#formatRelative", "detail": "unused export (knip)", "severity": "info" }
+      ]
+    },
+    {
+      "id": "dependencies",
+      "title": "Dependencies",
+      "status": "critical",
+      "summary": "1 high-severity vulnerability; 5 packages behind latest.",
+      "metrics": [
+        { "label": "Outdated", "value": 5 },
+        { "label": "Vulnerabilities", "value": "1 high" }
+      ],
+      "items": [
+        { "label": "express 4.18.1", "detail": "audit: high — upgrade to >=4.19.2", "severity": "critical" },
+        { "label": "vite 5.0.2 → 5.4.8", "detail": "minor updates available", "severity": "info" }
+      ]
+    },
+    {
+      "id": "git-hotspots",
+      "title": "Git Hotspots",
+      "status": "ok",
+      "summary": "Change activity is concentrated in the board feature; no abandoned areas.",
+      "metrics": [
+        { "label": "Commits (12 mo)", "value": 214 },
+        { "label": "Top hotspot", "value": "Board.tsx" }
+      ],
+      "items": [
+        { "label": "src/pages/Board/Board.tsx", "detail": "41 commits in 12 months — pair with its 612-line size", "severity": "warn" },
+        { "label": "server/routes/export.js", "detail": "untouched for 14 months — verify still used", "severity": "info" }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testing & Quality",
+      "status": "warn",
+      "summary": "Store slices well tested; no tests around CSV export.",
+      "metrics": [
+        { "label": "Test files", "value": 19 },
+        { "label": "Type errors", "value": 0 },
+        { "label": "Lint errors", "value": 3 }
+      ],
+      "items": [
+        { "label": "server/routes/export.js", "detail": "CSV export has no test coverage", "severity": "warn" }
+      ]
+    }
+  ]
+}
