@@ -57,7 +57,7 @@ fetch——所以手冊必須透過 HTTP 開啟。以下任一種方式都可以
 ## 安裝
 
 ```
-/plugin marketplace add shiaushen/project-handbook
+/plugin marketplace add Gexianss/project-handbook
 /plugin install project-handbook@project-handbook-marketplace
 ```
 

@@ -61,7 +61,7 @@ The viewer loads `data/*.md` with `fetch()` at runtime, and browsers block fetch
 ## Install
 
 ```
-/plugin marketplace add shiaushen/project-handbook
+/plugin marketplace add Gexianss/project-handbook
 /plugin install project-handbook@project-handbook-marketplace
 ```
 
