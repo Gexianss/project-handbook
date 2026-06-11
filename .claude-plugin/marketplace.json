@@ -1,0 +1,14 @@
+{
+  "name": "project-handbook-marketplace",
+  "owner": {
+    "name": "shiaushen",
+    "email": "shiaushen@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "project-handbook",
+      "source": "./",
+      "description": "Generate a dual-audience project handbook for JS/TS projects: health scan + user interview + HTML site for humans + md/json data for AI."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "project-handbook",
+  "version": "0.1.0",
+  "description": "Scan a JS/TS project, interview the user for knowledge that lives outside the code, and generate a dual-audience handbook: a browsable HTML site for humans backed by md/json data files for AI.",
+  "author": {
+    "name": "shiaushen",
+    "email": "shiaushen@gmail.com"
+  }
+}
