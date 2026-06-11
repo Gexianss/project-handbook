@@ -101,10 +101,12 @@
         html += "</dl>";
       }
       if (Array.isArray(f.items) && f.items.length) {
-        html += "<details><summary>" + f.items.length + " findings</summary>" +
+        const findingsLabel = f.items.length === 1 ? "1 finding" : f.items.length + " findings";
+        html += "<details><summary>" + findingsLabel + "</summary>" +
           "<ul class='findings'>";
         for (const item of f.items) {
-          html += "<li class='sev-" + esc(item.severity || "info") + "'>" +
+          const sev = ["info", "warn", "critical"].includes(item.severity) ? item.severity : "info";
+          html += "<li class='sev-" + sev + "'>" +
             "<code>" + esc(item.label) + "</code>" +
             (item.detail ? " — " + esc(item.detail) : "") + "</li>";
         }
