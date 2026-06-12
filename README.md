@@ -7,6 +7,9 @@ A [Claude Code](https://claude.com/claude-code) skill that turns any JS/TS proje
 data files that AI agents read directly. One set of files, two audiences, never out of
 sync.
 
+**▶ [Live Demo](https://gexianss.github.io/project-handbook/)** — browse a generated
+handbook right in your browser, no install needed.
+
 ![Architecture page with rendered Mermaid diagrams](docs/assets/screenshot-architecture.png)
 ![Health dashboard](docs/assets/screenshot-health.png)
 

@@ -6,6 +6,9 @@
 **雙受眾專案手冊**——給人看的是可瀏覽的 HTML 網站，給 AI 看的是同一批 markdown/JSON
 資料檔。一份內容、兩種讀法，永遠不會不同步。
 
+**▶ [線上 Demo](https://gexianss.github.io/project-handbook/)** —— 不用安裝，直接在
+瀏覽器逛一份產出的手冊。
+
 ![架構頁與 Mermaid 圖](docs/assets/screenshot-architecture.png)
 ![健康度儀表板](docs/assets/screenshot-health.png)
 
