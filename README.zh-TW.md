@@ -9,8 +9,7 @@
 **▶ [線上 Demo](https://gexianss.github.io/project-handbook/)** —— 不用安裝，直接在
 瀏覽器逛一份產出的手冊。
 
-![架構頁與 Mermaid 圖](docs/assets/screenshot-architecture.png)
-![健康度儀表板](docs/assets/screenshot-health.png)
+![Demo：總覽、架構圖、開發指南、健康儀表板](docs/assets/demo.gif)
 
 ## 它做什麼
 

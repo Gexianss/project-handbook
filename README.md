@@ -10,8 +10,7 @@ sync.
 **▶ [Live Demo](https://gexianss.github.io/project-handbook/)** — browse a generated
 handbook right in your browser, no install needed.
 
-![Architecture page with rendered Mermaid diagrams](docs/assets/screenshot-architecture.png)
-![Health dashboard](docs/assets/screenshot-health.png)
+![Demo: overview, architecture diagrams, dev guide, health dashboard](docs/assets/demo.gif)
 
 ## What it does
 
